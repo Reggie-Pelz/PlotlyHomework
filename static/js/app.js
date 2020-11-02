@@ -111,9 +111,9 @@ function buildPlot(dataset, values, ids, labels, metaid, metaEth, metaGender, me
   var trace1 = {
     type: 'bar',
     orientation: 'h',
-    x: values.slice(0,10),
-    y: ids.slice(0,10),
-    text: labels.slice(0,10)
+    x: values.slice(0,10).reverse(),
+    y: ids.slice(0,10).map(otuID => `OTU ${otuID}`).reverse(),
+    text: labels.slice(0,10).reverse()
   };
 
   var data1 = [trace1];
